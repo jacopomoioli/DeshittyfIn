@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "DeshittyfIn",
+  "version": "1.0",
+  "permissions": ["storage", "tabs"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.linkedin.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+}

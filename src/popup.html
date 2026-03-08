@@ -1,66 +1,157 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <style>
-    body { 
-      width: 240px; 
-      padding: 15px; 
-      font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
-      background: #ffffff; 
-      color: #333; 
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    
-    .logo-container {
-      width: 100%; 
-      display: flex;
-      justify-content: center;
-      margin-bottom: 15px;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      body {
+        width: 240px;
+        padding: 15px;
+        font-family:
+          -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+          sans-serif;
+        background: #ffffff;
+        color: #333;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
 
-    .logo-img {
-      max-width: 80%; 
-      height: auto; 
-      display: block;
-    }
-    
-    .switch-container { display: flex; justify-content: space-between; align-items: center; width: 100%; margin-bottom: 15px; font-weight: 600; font-size: 0.9rem; }
-    .switch { position: relative; display: inline-block; width: 42px; height: 24px; }
-    .switch input { opacity: 0; width: 0; height: 0; }
-    .slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #b0b0b0; transition: .3s; border-radius: 34px; }
-    .slider:before { position: absolute; content: ""; height: 18px; width: 18px; left: 3px; bottom: 3px; background-color: white; transition: .3s; border-radius: 50%; }
-    input:checked + .slider { background-color: #0a66c2; }
-    input:checked + .slider:before { transform: translateX(18px); }
+      .logo-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 15px;
+      }
 
-    label { display: block; width: 100%; margin-bottom: 5px; font-weight: 600; font-size: 0.85rem; text-align: left; }
-    small { color: #666; display: block; width: 100%; margin-bottom: 8px; font-size: 0.75rem; line-height: 1.2; text-align: left; }
-    input[type="text"] { width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccd0d5; border-radius: 4px; box-sizing: border-box; outline-color: #0a66c2; }
-    
-    button { width: 100%; cursor: pointer; padding: 10px; background: #0a66c2; color: white; border: none; border-radius: 20px; font-weight: bold; font-size: 0.9rem; transition: background 0.2s; }
-    button:hover { background: #004182; }
-  </style>
-</head>
-<body>
-  <div class="logo-container">
-    <img src="../media/deshittyfin.png" alt="DeshittyfIn Logo" class="logo-img">
-  </div>
-  
-  <div class="switch-container">
-    <span>Filter Status</span>
-    <label class="switch">
-      <input type="checkbox" id="isEnabled">
-      <span class="slider"></span>
-    </label>
-  </div>
+      .logo-img {
+        max-width: 80%;
+        height: auto;
+        display: block;
+      }
 
-  <label for="charsFilter">Forbidden Characters</label>
-  <input type="text" id="charsFilter" placeholder="Symbols to block...">
-  
-  <button id="save">Save & Refresh</button>
+      .switch-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 15px;
+        font-weight: 600;
+        font-size: 0.9rem;
+      }
+      .switch {
+        position: relative;
+        display: inline-block;
+        width: 42px;
+        height: 24px;
+      }
+      .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #b0b0b0;
+        transition: 0.3s;
+        border-radius: 34px;
+      }
+      .slider:before {
+        position: absolute;
+        content: "";
+        height: 18px;
+        width: 18px;
+        left: 3px;
+        bottom: 3px;
+        background-color: white;
+        transition: 0.3s;
+        border-radius: 50%;
+      }
+      input:checked + .slider {
+        background-color: #0a66c2;
+      }
+      input:checked + .slider:before {
+        transform: translateX(18px);
+      }
 
-  <script src="popup.js"></script>
-</body>
+      label {
+        display: block;
+        width: 100%;
+        margin-bottom: 5px;
+        font-weight: 600;
+        font-size: 0.85rem;
+        text-align: left;
+      }
+      small {
+        color: #666;
+        display: block;
+        width: 100%;
+        margin-bottom: 8px;
+        font-size: 0.75rem;
+        line-height: 1.2;
+        text-align: left;
+      }
+      input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccd0d5;
+        border-radius: 4px;
+        box-sizing: border-box;
+        outline-color: #0a66c2;
+      }
+
+      button {
+        width: 100%;
+        cursor: pointer;
+        padding: 10px;
+        background: #0a66c2;
+        color: white;
+        border: none;
+        border-radius: 20px;
+        font-weight: bold;
+        font-size: 0.9rem;
+        transition: background 0.2s;
+      }
+      button:hover {
+        background: #004182;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="logo-container">
+      <img
+        src="../media/deshittyfin.png"
+        alt="DeshittyfIn Logo"
+        class="logo-img"
+      />
+    </div>
+
+    <div class="switch-container">
+      <span>Filter Status</span>
+      <label class="switch">
+        <input type="checkbox" id="isEnabled" />
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <div class="switch-container">
+      <span>Filter "AI" Buzzwords</span>
+      <label class="switch">
+        <input type="checkbox" id="aiFilterEnabled" />
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <label for="charsFilter">Forbidden Characters</label>
+    <input type="text" id="charsFilter" placeholder="Symbols to block..." />
+
+    <button id="save">Save & Refresh</button>
+
+    <script src="popup.js"></script>
+  </body>
 </html>
